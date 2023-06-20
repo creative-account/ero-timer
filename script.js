@@ -17,17 +17,19 @@ function down() {
 
 function count() {
     residue--;
-    if (residue == 0) {
+    if (residue < 0) {
         audio.play();
+        clearInterval(interval_id)
+        residue = 0
     }
     timer.textContent = residue + "秒";
 }
 
 function start() {
-    setInterval(count, 1000);
+    interval_id = setInterval(count, 1000);
 }
 
-function fake_stop() {
+function fake_stop(){
     var fake = document.getElementById("fake");
     fake.remove();
 }
