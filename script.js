@@ -21,6 +21,7 @@ function count() {
     if (residue < 0) {
         audio.play();
         clearInterval(interval_id)
+        timer_start.disabled = false;
         residue = 0
     }
     timer.textContent = residue + "秒";
