@@ -1,4 +1,5 @@
 var timer = document.getElementById("timer");
+var start_button = document.getElementById("start")
 var audio = new Audio("aegigoe.mp4");
 var residue = 0;
 
@@ -25,7 +26,8 @@ function count() {
     timer.textContent = residue + "秒";
 }
 
-function start() {
+function timer_start() {
+    timer_start.disabled = true;
     interval_id = setInterval(count, 1000);
 }
 
